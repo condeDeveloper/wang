@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wang"
+version = "1.0.0"
+description = "Ladrilhos de Wang varridos conjunto a conjunto: matriz de transferencia contra busca direta, e o tamanho em que cada conjunto morre."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "condeDeveloper" }]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Scientific/Engineering :: Mathematics",
+]
+
+[project.scripts]
+wang = "wang.__main__:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+include = ["wang*"]
+
+[tool.pytest.ini_options]
+testpaths = ["testes"]
+addopts = "-q"
